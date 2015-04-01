@@ -22,7 +22,7 @@ def getNewRandoms():
 	return randomsList
 
 def saveToFile(filename,data,loops):
-	with open( strftime('%m-%d-%H-%M-%S') + "_Loops" + str(loops) + '_' + filename, 'w') as outfile: # filename will be: Months-Days-Hours-Minutes-Seconds_Loops####_randomsFreq.txt
+	with open( datetime.datetime.now().strftime('%m-%d-%H-%M-%S') + "_Loops" + str(loops) + '_' + filename, 'w') as outfile: # filename will be: Months-Days-Hours-Minutes-Seconds_Loops####_randomsFreq.txt
 		json.dump(data,outfile)
 		outfile.write('\n' + "Loops Done: " + str(loops) + '\n')
     #f = open(filename, 'w')
